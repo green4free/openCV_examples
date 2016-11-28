@@ -1,0 +1,18 @@
+import numpy as np
+import cv2
+
+cap = cv2.VideoCapture(0)
+ret, frame1 = cap.read()
+fgbg = cv2.bgsegm.createBackgroundSubtractorMOG()
+while(1):
+    ret, frame = cap.read()
+    fmask = fgbg.apply(frame)
+    res = cv2.bitwise_and(frame1,frame1,mask = fmask)
+    cv2.imshow('frame', res)
+    cv2.imshow('feed', frame)
+    k = cv2.waitKey(30) & 0xff
+    if k == 27:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
