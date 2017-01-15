@@ -35,7 +35,7 @@ while(True):
                        		cv2.rectangle(image2, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
                         	# print coordinates, radius and number of circle found 
 	# Show keypoints
-	cv2.imshow("Keypoints", np.hstack([image2, image]))
+	cv2.imshow("Keypoints", np.hstack([image2]))
 	k = cv2.waitKey(30) & 0xff
 	if k == 27:
 		break

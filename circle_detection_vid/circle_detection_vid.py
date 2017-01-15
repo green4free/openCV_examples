@@ -27,7 +27,7 @@ while(True):
 
 			 
 	# show the output image
-	cv2.imshow("output", np.hstack([image, output]))
+	cv2.imshow("output", np.hstack([output]))
 	# event for close on Esc key
 	k = cv2.waitKey(30) & 0xff
 	if k == 27:
